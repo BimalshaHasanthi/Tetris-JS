@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Fjalla+One&family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="animation.css">
+
+    <style>
+        #score{
+            display: inline-block;
+        }
+        body{
+            text-align: center;
+            background-color: #26282b;
+        }
+        header{
+            font-size: 25px;
+            color: #ee550e;
+            font-weight: bold;
+            z-index: 2;
+        }
+        main{
+            position: relative;
+            z-index: 2;
+
+        }
+        main>section{
+            font-size: 25px;
+            color: #feaf26;
+            z-index: 1;
+        }
+        #message{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #26282b;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 3;
+        }
+        .restart-button{
+            width: 120px;
+            height: 40px;
+            font-size: 20px;
+            background-color: #ff4d00;
+            box-shadow: #e70101 4px 4px 0; /*ff0000*/
+            border-width: 0;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-family: 'Fira Sans', sans-serif;
+            transition: transform 200ms, box-shadow;
+
+        }
+        .restart-button:active{
+            transform: translateX(4px) translateY(4px);
+            box-shadow: #e70101 0 0 0;
+        }
+        .message-text{
+
+        }
+        #message>div:nth-child(1){
+            font-family: 'Oleo Script Swash Caps', cursive;
+            font-size: 100px;
+        }
+        #message>div:nth-child(3){
+            font-size: 50px;
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        #message.show{
+            display: flex;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <p>TETRIS</p>
+    </header>
+    <main>
+        <canvas id="frame" width="200" height="400" style="background-color: #84878a"></canvas>
+        <section>
+            <br>
+            Scores : <div id="score">0</div>
+        </section>
+    </main>
+    <section>
+        <ul class="animation">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+
+    <section id="message" >
+        <div class="message-text" >Game Over</div><br>
+        <div class="message-text">Your Score : 0</div><br>
+        <button class="restart-button">Restart</button>
+    </section>
+
+    <script src="shapes.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
