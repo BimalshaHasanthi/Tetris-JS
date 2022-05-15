@@ -157,7 +157,7 @@ Piece.prototype.lock = function(){
                     window.location.reload();
                 }
 
-                let displayScore= document.querySelector("#message>div:nth-child(2)");
+                let displayScore= document.querySelector("#message>div:nth-child(3)");
                 displayScore.innerHTML= "Score : "+score;
 
                 gameOver = true;
